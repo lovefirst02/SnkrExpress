@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/lovefirst02/SnkrExpress#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "netlify-lambda": "^2.0.8",
     "request": "^2.88.2",

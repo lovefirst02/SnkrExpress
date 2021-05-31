@@ -1,6 +1,7 @@
 const express = require('express')
 const serverless = require('serverless-http')
 const getSnkrs = require('./module/snkrsData')
+const cors = require('cors')
 
 const app = express()
 const router = express.Router()
@@ -11,5 +12,6 @@ router.get("/",async (req,res) => {
 })
 
 app.use("/.netlify/functions/api",router)
+app.use(cors())
 
 module.exports.handler = serverless(app)
