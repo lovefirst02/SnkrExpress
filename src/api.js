@@ -1,6 +1,6 @@
 const express = require('express')
 const serverless = require('serverless-http')
-const getSnkrs = require('./module/snkrsData')
+const {getSnkrs, getLevel} = require('./module/snkrsData')
 
 const app = express()
 const router = express.Router()
@@ -8,6 +8,11 @@ app.use(require('cors')())
 
 router.get("/",async (req,res) => {
     const data = await getSnkrs()
+    res.json(JSON.parse(data))
+})
+
+router.get("/stock/:id", async (req,res) => {
+    const data = await getLevel(req.params.id)
     res.json(JSON.parse(data))
 })
 

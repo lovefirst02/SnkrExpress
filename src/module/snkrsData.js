@@ -15,4 +15,19 @@ function getSnkrs(){
     })    
 }
 
-module.exports = getSnkrs
+function getLevel(id){
+    return new Promise((resolve, reject) => {
+        try {
+            rp.get(`https://api.nike.com/deliver/available_skus/v1/${id}`).then((result) => {
+                resolve(result)
+            })
+        } catch (error) {
+            reject(error)
+        }
+    })
+}
+
+module.exports = {
+    "getSnkrs" : getSnkrs,
+    "getLevel" : getLevel
+}
