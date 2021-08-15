@@ -16,12 +16,12 @@ router.get("/stock/:id", async (req,res) => {
     res.json(JSON.parse(data))
 })
 
-router.get("/status", async (req,res) => {
+router.post("/status", async (req,res) => {
     status = {
         "success": true,
         "message": "兑换成功"
     }
-    res.json(JSON.parse(status))
+    res.json(status)
 })
 
 app.use("/.netlify/functions/api",router)
