@@ -24,6 +24,14 @@ router.post("/status", async (req,res) => {
     res.json(status)
 })
 
+router.get("/status", async (req,res) => {
+    status = {
+        "success": true,
+        "message": "兑换成功"
+    }
+    res.json(status)
+})
+
 app.use("/.netlify/functions/api",router)
 
 module.exports.handler = serverless(app)
