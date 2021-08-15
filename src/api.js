@@ -18,7 +18,7 @@ router.get("/stock/:id", async (req,res) => {
 
 router.post("/status", async (req,res) => {
     status = {
-        "success": false,
+        "success": true,
         "message": "兑换失败"
     }
     res.json(status)
