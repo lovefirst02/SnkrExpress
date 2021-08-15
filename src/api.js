@@ -16,7 +16,7 @@ router.get("/stock/:id", async (req,res) => {
     res.json(JSON.parse(data))
 })
 
-router.post("/status", async (req,res) => {
+router.get("/status", async (req,res) => {
     status = {
         "success": true,
         "message": "兑换成功"
